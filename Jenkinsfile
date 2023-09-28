@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'jenkins-slave-label' }
     tools {
-      maven 'Maven-3.9.4'
+      maven 'Maven-3.8.4'
     }
     stages {
         stage('Source') {
