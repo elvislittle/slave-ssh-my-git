@@ -40,7 +40,7 @@ pipeline {
                     def remoteUser = 'ubuntu'
                     def remoteHost = 'ec2-13-53-98-65.eu-north-1.compute.amazonaws.com'
                     def remoteDir = '~/'
-                    sh "scp -i ~/SSH_keys/jenkins-master.pem ${env.WORKSPACE}@2/target/JavaDummy-1.0.jar ${remoteUser}@${remoteHost}:${remoteDir}/"
+                    sh "scp -i ~/SSH_keys/jenkins-master.pem ${env.WORKSPACE}/target/JavaDummy-1.0.jar ${remoteUser}@${remoteHost}:${remoteDir}/"
                 }
             }
         }
