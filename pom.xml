@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>Andersen</groupId>
-  <artifactId>JavaDummy</artifactId>
+  <artifactId>Goal!</artifactId>
   <version>1.0</version>
 
-  <name>MyGoal</name>
+  <name>Project_Goal</name>
   <url>http://www.elvislittle.site</url>
 
   <properties>
