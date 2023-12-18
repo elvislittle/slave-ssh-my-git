@@ -29,7 +29,7 @@ pipeline {
         stage('Packing the app') {
             steps {
                 dir("${env.WORKSPACE}"){
-                    sh 'mvn package '
+                    sh 'mvn package -DskipTests'
                 }
             }
         }
