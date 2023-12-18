@@ -4,7 +4,7 @@ pipeline {
       maven 'Maven-3.9.4'
     }
     stages {
-        stage('Source') {
+        stage('Getting the source code') {
             steps {
                 sh 'mvn --version'
                 sh 'git --version'
@@ -12,21 +12,21 @@ pipeline {
                     url: 'https://github.com/elvislittle/ssh-agent.git'
             }
         }
-        stage('Clean') {
+        stage('Cleaning the environment') {
             steps {
                 dir("${env.WORKSPACE}"){
                     sh 'mvn clean'
                 }
             }
         }
-        stage('Test') {
+        stage('Testing the app') {
             steps {
                 dir("${env.WORKSPACE}"){
                     sh 'mvn test'
                 }
             }
         }
-        stage('Package') {
+        stage('Packaging the app') {
             steps {
                 dir("${env.WORKSPACE}"){
                     sh 'mvn package -DskipTests'
@@ -34,7 +34,7 @@ pipeline {
             }
         }
 
-        stage('Deliver to Master EC2') {
+        stage('Delivering the app to Master EC2') {
             steps {
                 script {
                     def remoteUser = 'ubuntu'
