@@ -26,7 +26,7 @@ pipeline {
                 }
             }
         }
-        stage('Packaging the app') {
+        stage('Packing the app') {
             steps {
                 dir("${env.WORKSPACE}"){
                     sh 'mvn package -DskipTests'
