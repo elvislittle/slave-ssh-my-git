@@ -4,7 +4,7 @@ pipeline {
       maven 'Maven-3.9.4'
     }
     stages {
-        stage('Getting the source code') {
+        stage('Getting source code') {
             steps {
                 sh 'mvn --version'
                 sh 'git --version'
@@ -12,7 +12,7 @@ pipeline {
                     url: 'https://github.com/elvislittle/ssh-agent.git'
             }
         }
-        stage('Cleaning the environment') {
+        stage('Cleaning environment') {
             steps {
                 dir("${env.WORKSPACE}"){
                     sh 'mvn clean'
@@ -29,7 +29,7 @@ pipeline {
         stage('Packing the app') {
             steps {
                 dir("${env.WORKSPACE}"){
-                    sh 'mvn package -DskipTests'
+                    sh 'mvn package '
                 }
             }
         }
